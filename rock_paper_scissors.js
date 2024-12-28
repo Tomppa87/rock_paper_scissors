@@ -30,20 +30,20 @@ function getComputerChoice() {
     let comp = Math.random()*100;
     //console.log (comp)
     if (comp <= 100/3) { 
-        return "Rock";
+        return "rock";
     
     }   else if (comp >= 100*2/3) {
-        return "Paper";
+        return "paper";
     
     }   else {
-        return "Scissors"
+        return "scissors"
     }
 }
 
 
 function getHumanChoice() {
     let choice = prompt("Rock, Paper or Scissors")
-    return choice
+    return choice.toLowerCase();
     /*if (choice === "Rock") {
         return "Rock";
     }   else if (choice === "Paper") {
@@ -62,22 +62,22 @@ function playRound(humanChoice, computerChoice) {
     
     if (humanChoice === computerChoice) {
         console.log("Looks like a draw");
-    }   else if (humanChoice === "Rock" && computerChoice === "Scissors") {
+    }   else if (humanChoice === "rock" && computerChoice === "scissors") {
         humanScore = humanScore + 1;
         console.log("Human wins");
-    }   else if (humanChoice === "Scissors" && computerChoice === "Paper"){
+    }   else if (humanChoice === "scissors" && computerChoice === "paper"){
         humanScore = humanScore + 1;
         console.log("Human wins");
-    }   else if (humanChoice === "Paper" && computerChoice === "Rock"){
+    }   else if (humanChoice === "paper" && computerChoice === "rock"){
         humanScore = humanScore + 1;
         console.log("Human wins");    
-    }   else if (humanChoice === "Rock" && computerChoice === "Paper") {
+    }   else if (humanChoice === "rock" && computerChoice === "paper") {
         computerScore = computerScore +1;
         console.log("Computer wins");
-    }   else if (humanChoice === "Scissors" && computerChoice === "Rock") {
+    }   else if (humanChoice === "scissors" && computerChoice === "rock") {
         computerScore = computerScore +1;
         console.log("Computer wins");
-    }   else if (humanChoice === "Paper" && computerChoice === "Scissors") {
+    }   else if (humanChoice === "paper" && computerChoice === "scissors") {
         computerScore = computerScore +1;
         console.log("Computer wins");
     }
