@@ -1,7 +1,34 @@
+function playGame() {
+    for (let i = 0; i <5; i++) {
+        console.log("Rounds left: " +(5-i))
+        
+        var computerSelection = getComputerChoice();
+        //console.log(computerSelection)
+        var humanSelection = getHumanChoice();
+        playRound (humanSelection, computerSelection)
+        console.log("You're score is: "+ humanScore)
+        console.log("The computer's score is: "+ computerScore)
+        
+    }
+    if (humanScore > computerScore) {
+        console.log("You win!");
+    }   else if (humanScore < computerScore) {
+        console.log("You lose");
+
+    }   else {
+        console.log("You both suck");
+    }
+}   
+var humanScore = 0;
+var computerScore = 0;
+
+
+
+
 
 function getComputerChoice() {
     let comp = Math.random()*100;
-    console.log (comp)
+    //console.log (comp)
     if (comp <= 100/3) { 
         return "Rock";
     
@@ -29,12 +56,12 @@ function getHumanChoice() {
     */
 }
 
-var humanScore = 0;
-var computerScore = 0;
+
 
 function playRound(humanChoice, computerChoice) {
+    
     if (humanChoice === computerChoice) {
-        return "Try Again"
+        console.log("Looks like a draw");
     }   else if (humanChoice === "Rock" && computerChoice === "Scissors") {
         humanScore = humanScore + 1;
         console.log("Human wins");
@@ -55,12 +82,14 @@ function playRound(humanChoice, computerChoice) {
         console.log("Computer wins");
     }
 
-    console.log(humanScore)
-    console.log(computerScore)
+    //console.log(humanScore)
+    //console.log(computerScore)
 }
-var computerSelection = getComputerChoice();
-console.log(computerSelection);
-var humanSelection = getHumanChoice();
+//var computerSelection = getComputerChoice();
+//console.log(computerSelection);
+//var humanSelection = getHumanChoice();
 
 
-playRound(humanSelection, computerSelection);
+//playRound(humanSelection, computerSelection);
+
+playGame();
