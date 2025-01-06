@@ -19,10 +19,6 @@ title.style.color = "white"
 const buttons = document.querySelectorAll("button");
 console.log(buttons)
 
-//console.log(typeof(buttons))
-
-
-
 body.insertBefore(title, buttons[0])
 
 const container = document.createElement("div")
@@ -36,7 +32,7 @@ console.log(buttons[0])
 
 function getComputerChoice() {
     let comp = Math.random()*100;
-    //console.log (comp)
+    
     if (comp <= 100/3) { 
         return "rock";
     
@@ -116,6 +112,8 @@ function checkGame() {
         container.textContent = ("Final Scores: Human " + humanScore + " Computer "+computerScore)
         container.appendChild(resultbox)
         clickCounter = 0;
+        humanScore = 0;
+        computerScore = 0;
     }
     
 }
