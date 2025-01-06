@@ -3,6 +3,7 @@ var computerScore = 0;
 var clickCounter = 1;
 
 const body = document.querySelector("body")
+body.style.backgroundColor = "#00fff1"
 
 const title = document.createElement("h1");
 title.classList.add("title");
@@ -12,6 +13,8 @@ const subtitle = document.createElement("h6");
 subtitle.classList.add("subtitle");
 subtitle.textContent = "Best of 5 rounds. Choose your weapon:";
 title.appendChild(subtitle)
+title.style.backgroundColor = "#0b756f"
+title.style.color = "white"
 
 const buttons = document.querySelectorAll("button");
 console.log(buttons)
@@ -31,30 +34,6 @@ body.appendChild(container);
 
 console.log(buttons[0])
 
-/*function playGame() {   
-    
-    for (let i = 0; i <5; i++) {
-        console.log("Rounds left: " +(5-i))
-        
-        var computerSelection = getComputerChoice();
-        var humanSelection = getHumanChoice;
-        playRound (humanSelection, computerSelection)
-        console.log("Your score is: "+ humanScore)
-        console.log("The computer's score is: "+ computerScore)
-        
-    }
-    if (humanScore > computerScore) {
-        console.log("You win!");
-    }   else if (humanScore < computerScore) {
-        console.log("You lose");
-
-    }   else {
-        console.log("You both suck");
-    }
-}   
-    */
-
-
 function getComputerChoice() {
     let comp = Math.random()*100;
     //console.log (comp)
@@ -68,24 +47,6 @@ function getComputerChoice() {
         return "scissors"
     }
 }
-
-
-/*function getHumanChoice() {
-    let choice = prompt("Rock, Paper or Scissors")
-    return choice.toLowerCase();
-    /*if (choice === "Rock") {
-        return "Rock";
-    }   else if (choice === "Paper") {
-        return "Paper";
-    }   else if (choice === "Scissors") {
-        return "Scissors";
-    }   else {
-        return "Not a valid option, please make sure you've typed correctly"
-    }    
-    
-}
-*/
-
 
 function playRound(humanChoice, computerChoice) {
     
@@ -112,15 +73,12 @@ function playRound(humanChoice, computerChoice) {
     }
     container.textContent = ("You chose " + humanChoice + ", the computer chose " + computerChoice+".\n You are playing round " + clickCounter + 
         "\nThe score is currently: Human " + humanScore + " Computer "+computerScore)
-    //console.log(humanScore)
-    //console.log(computerScore)
+  
 }
 buttons.forEach((button) => {
     button.addEventListener("click", () => {
-        //console.log(button.innerText.toLowerCase())
         var getHumanChoice = button.innerText.toLowerCase();
         clickCounter += 1;
-        //console.log(clickCounter)
         console.log(getHumanChoice)
         
         var computerSelection = getComputerChoice()
@@ -157,14 +115,7 @@ function checkGame() {
         }
         container.textContent = ("Final Scores: Human " + humanScore + " Computer "+computerScore)
         container.appendChild(resultbox)
+        clickCounter = 0;
     }
     
 }
-//var computerSelection = getComputerChoice();
-//console.log(computerSelection);
-//var humanSelection = getHumanChoice();
-
-
-//playRound(humanSelection, computerSelection);
-
-//playGame();
